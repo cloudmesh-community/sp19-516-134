@@ -15,4 +15,15 @@ Week2 (01/14) Update
 Week3 (01/21) Update
 		
 		Videos: Watched e516-introduction
+		Went through data center section
+		
+Week3 (01/28) Update
+               
+               Went through chapter 7 , 8 and 9
+               Signed up for 2 sections(Amazon document db and Scikit learn)
 
+Week3 (02/04) Update
+               
+                   
+               
+               
