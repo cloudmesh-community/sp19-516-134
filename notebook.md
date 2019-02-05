@@ -19,7 +19,9 @@ Week3 (01/21) Update
 		
 Week3 (01/28) Update
                
-               Went through chapter 7 , 8 and 9
+               Went through Architectures
+               Read through NIST Big Data Referenece Architecture
+               Went through Rest chapter
                Signed up for 2 sections(Amazon document db and Scikit learn)
 
 Week3 (02/04) Update
