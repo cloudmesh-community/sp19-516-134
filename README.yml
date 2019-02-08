@@ -5,3 +5,14 @@ owner:
   hid: sp19-516-134
   community: e516
   semester: sp19
+section:
+  - title: AWS DocumentDB
+    keyword: Introduction on Amazon Document DB, Create a Document DB cluster.
+    url:
+    github:
+    issue : https://github.com/cloudmesh-community/book/issues/233
+chapter:
+  - title: Scikit-Learn
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/scikit-learn/scikit-learn-k-means.md
+    github: 
+    issue: https://github.com/cloudmesh-community/book/issues/242
