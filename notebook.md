@@ -17,15 +17,22 @@ Week3 (01/21) Update
 		Videos: Watched e516-introduction
 		Went through data center section
 		
-Week3 (01/28) Update
+Week4 (01/28) Update
                
                Went through Architectures
                Read through NIST Big Data Referenece Architecture
                Went through Rest chapter
-               Signed up for 2 sections(Amazon document db and Scikit learn)
+               Signed up for 2 sections in Amazon document db 
 
-Week3 (02/04) Update
+Week5 (02/04) Update
                
-                   
+	       Signed up for Scikit learn chapter
+	       Contributed to Amazon DB section(Introduction) and Scikit learn chapter(Introduction, Supervised learning 
+	       ,Unsupervised learning)
+	       
+	       
+Week6 (02/11)  Shortlisted project on  Cloud Service Filemanagement with AWS.
+               Understanding cloudmesh architecture.
+
                
                
