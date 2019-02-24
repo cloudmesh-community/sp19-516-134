@@ -33,6 +33,10 @@ Week5 (02/04) Update
 	       
 Week6 (02/11)  Shortlisted project on  Cloud Service Filemanagement with AWS.
                Understanding cloudmesh architecture.
+	      
+	      
+Week6 (02/18)  Added Data exploration section to Scikit learn chapter.
+               Executed CPU example.
 
                
                
