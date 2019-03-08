@@ -35,8 +35,13 @@ Week6 (02/11)  Shortlisted project on  Cloud Service Filemanagement with AWS.
                Understanding cloudmesh architecture.
 	      
 	      
-Week6 (02/18)  Added Data exploration section to Scikit learn chapter.
+Week7 (02/18)  Added Data exploration section to Scikit learn chapter.
                Executed CPU example.
 
+Week8 (02/25)  Installed Cloudmesh.
+
+Week9 (03/01)  Tested Libcloud for S3 storage
+
+               
                
                
