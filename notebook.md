@@ -31,16 +31,25 @@ Week5 (02/04) Update
 	       ,Unsupervised learning)
 	       
 	       
-Week6 (02/11)  Shortlisted project on  Cloud Service Filemanagement with AWS.
+Week6 (02/11)  Update
+
+               Shortlisted project on  Cloud Service Filemanagement with AWS.
                Understanding cloudmesh architecture.
 	      
 	      
-Week7 (02/18)  Added Data exploration section to Scikit learn chapter.
+Week7 (02/18)  Update
+
+               Added Data exploration section to Scikit learn chapter.
                Executed CPU example.
 
-Week8 (02/25)  Installed Cloudmesh.
+Week8 (02/25)  Update 
+              
+	      Installed Cloudmesh. Created name command.
 
-Week9 (03/01)  Tested Libcloud for S3 storage
+Week9 (03/01)  Update
+
+              Created the script for connecting to AWS S3 service using libcloud.
+	      Create file and retrived the file list back
 
                
                
