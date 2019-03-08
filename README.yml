@@ -17,3 +17,9 @@ chapter:
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/scikit-learn/scikit-learn-k-means.md
     github: 
     issue: https://github.com/cloudmesh-community/book/issues/242
+project : 
+    title : AWS S3 file management using libcloud
+    docopt : https://github.com/cloudmesh-community/sp19-516-134/blob/master/docoptfile
+    
+    
+    
