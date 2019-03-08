@@ -1,0 +1,25 @@
+"""
+          ::
+            Usage:
+                  storage [--storage=SERVICE] put FILENAME DIR
+                  storage [--storage=SERVICE] get FILENAME DIR
+                  storage [--storage=SERVICE] getdir DIR
+                  storage [--storage=SERVICE] listdir DIR
+                  storage [--storage=SERVICE] listfile DIR
+                  storage [--storage=SERVICE] delete FILENAME              
+                  storage [--storage=SERVICE] createdir DIR
+                  storage [--storage=SERVICE] createfile FILENAME                              
+                  
+            This command does some useful things.
+            Arguments:
+                FILENAME      a file name
+                DIR   destination directory for uploads and downloads
+                                
+            Options:
+                -f      specify the file
+            Example:
+              set storage=aws
+              storage put FILENAME
+              is the same as 
+              storage  --storage=aws put FILENAME
+   """
