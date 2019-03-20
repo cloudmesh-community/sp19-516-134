@@ -21,7 +21,8 @@ comprehension :
     VM connection using config file : sp19-516-134/Comprehension/awsvmconnection_libcloud.py      
 project : 
     title : AWS S3 file management using libcloud
-    docopt : https://github.com/cloudmesh-community/sp19-516-134/blob/master/docoptfile
+    docopt : https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/Docopt_storage_libcloud.py
+    project_code : https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/
     
     
     
