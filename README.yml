@@ -14,7 +14,7 @@ section:
 chapter:
   - title: Scikit-Learn
     keyword: Introduction,Supervised learning,Unsupervised Learning,Linear Models,Support Vector Machines,Stochastic Gradient Descent,Nearest Neighbors,Feature Selection
-    url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/scikit-learn/scikit-learn-k-means.md
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/scikit-learn/scikit-learn.md
     github: 
     issue: https://github.com/cloudmesh-community/book/issues/242
 comprehension :    
