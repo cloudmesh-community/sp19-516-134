@@ -11,6 +11,8 @@ section:
     url: https://github.com/cloudmesh-community/book/pull/361
     github:
     issue : https://github.com/cloudmesh-community/book/issues/233
+  - title: Nosetest
+    url: https://github.com/cloudmesh-community/sp19-516-134/tree/master/nosetest
 chapter:
   - title: Scikit-Learn
     keyword: Introduction,Supervised learning,Unsupervised Learning,Linear Models,Support Vector Machines,Stochastic Gradient Descent,Nearest Neighbors,Feature Selection
