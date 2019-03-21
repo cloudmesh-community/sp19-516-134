@@ -63,8 +63,26 @@ class Provider(object):
         else:
             print('Directory already present')
 
+    def list_files(self):
+
+        data = dict()
+        files = {}  # get files from boto
+        for file in files:
+            dictfile = files[file]
+            dictfile['cloud'] = 'aws'
+            dictfile['kind'] = 'storage'
+            data.append(dictfile)
+
+        return data
+
     # function to list files in a directory
     def listDirFiles(self, dirName):
+
+        #
+        #  each file must have the attibutes
+        #  cloud = cloudname ("aws")
+        #  kind = "storage"
+
         objs = list(self.s3Resource.Bucket(self.container_name).objects.all())
 
         dirFilesList = []
