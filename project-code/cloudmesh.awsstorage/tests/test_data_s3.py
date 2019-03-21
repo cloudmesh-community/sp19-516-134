@@ -18,6 +18,9 @@ from cloudmesh.mongo.CmDatabase import CmDatabase
 from cloudmesh.common.util import banner
 
 
+# ~/.cloudmesh/tmp/storage .....
+
+
 class TestName:
 
     def setup(self):
