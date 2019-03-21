@@ -23,13 +23,26 @@ class TestName:
     def setup(self):
         banner("setup", c="-")
         self.user = Config()["cloudmesh.profile.user"]
-
         self.p = Provider(name="aws")
+        
 
     def test_01_connection(self):
         HEADING()
         print('in test conn')
+        #assrert self.p ???
+
+    def test_02_create(self):
+        HEADING()
+
+        #self.p.createDir('test')
+        #assert ....
+        
+    def test_02_list(self):
+        HEADING()
         #assert self.p.list() == None
+        
+        
+        
         #self.p.createDir('test')
         #self.p.putFile('cloudmeshv4.pptx','c:/Users/shrut/Downloads/','cloudmeshv.pptx','/upload')
         #self.p.getFile('cloudmeshv.pptx','/upload','cloudmeshv_downloaded.pptx','c:/Users/shrut/Downloads/')
@@ -43,3 +56,6 @@ class TestName:
         #self.p.listDirFiles('/upload')
         #self.p.listDirFiles('')
         #self.p.deleteDir('/test')
+        
+        
+        
