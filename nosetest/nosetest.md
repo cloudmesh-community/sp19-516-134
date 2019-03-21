@@ -64,3 +64,51 @@ The output displayed on console will be as follows −
 
 The result will be true if the test run is successful, or false if it fails or raises an uncaught exception.
 nose supports fixtures (setup and teardown methods) at the package, module, class, and test level. As with py.test or unittest fixtures, setup always runs before any test (or collection of tests for test packages and modules); teardown runs if setup has completed successfully, regardless of the status of the test run.
+
+## Cloudmesh sample test example
+```python
+#################################################################
+# nosetest -v --nopature
+# nosetests -v --nocapture tests/test_data_s3.py
+#################################################################
+from pprint import pprint
+import time
+import subprocess
+import sys
+from cloudmesh.common.util import HEADING
+from cloudmesh.storage.provider.aws.Provider import Provider
+from cloudmesh.management.configuration.config import Config
+from cloudmesh.common.Printer import Printer
+from cloudmesh.common.FlatDict import FlatDict, flatten
+from cloudmesh.management.configuration.SSHkey import SSHkey
+from cloudmesh.management.configuration.name import Name
+from cloudmesh.mongo.CmDatabase import CmDatabase
+from cloudmesh.common.util import banner
+
+
+# ~/.cloudmesh/tmp/storage .....
+
+
+class TestName:
+
+    def setup(self):
+        banner("setup", c="-")
+        self.user = Config()["cloudmesh.profile.user"]
+        self.p = Provider(name="aws")
+        
+
+    def test_01_connection(self):
+        HEADING()
+        print('in test conn')
+        #assrert self.p ???
+
+    def test_02_create(self):
+        HEADING()
+
+        #self.p.createDir('test')
+        #assert ....
+        
+    def test_02_list(self):
+        HEADING()
+        #assert self.p.list() == None
+   ```     
