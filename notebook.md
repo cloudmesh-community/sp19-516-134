@@ -50,6 +50,18 @@ Week9 (03/01)  Update
         Created the script for connecting to AWS S3 service using libcloud.
 	Create file and retrived the file list back.
 
-               
+Week10 (03/08)  Update
+
+        Libcloud S3 file managment methods testing without CM framework.
+	Mongo DB Overview and how to use.
+	Docopt creation and vm managment script using yaml configuration
+
+Week11 (03/15)  Update
+
+        Created provider for libcloud and integrated with storage command
+	Tested provider for boto3.
+	Tested the storage integration with boto3 and libcoud.
+	
+	              
                
                
