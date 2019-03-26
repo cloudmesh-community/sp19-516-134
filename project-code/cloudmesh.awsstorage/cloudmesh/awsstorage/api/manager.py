@@ -1,12 +1,15 @@
 import cloudmesh.storage.provider.gdrive.Provider
 import cloudmesh.storage.provider.box.Provider
+#import cloudmesh.storage.provider.aws.Provider_libcloud
 import cloudmesh.storage.provider.aws.Provider
-
+import cloudmesh.storage.provider.awsboto.Provider
+import cloudmesh.storage.provider.awslibcloud.Provider
 
 class Manager(object):
 
     def __init__(self):
         print("init {name}".format(name=self.__class__.__name__))
+        print('inside manage aws')
 
     def _provider(self, service):
         provider = None
@@ -16,8 +19,11 @@ class Manager(object):
             provider = cloudmesh.storage.provider.box.Provider.Provider()
         elif service == "aws":
             provider = cloudmesh.storage.provider.aws.Provider.Provider()
+        elif service == "awsboto":
+            provider = cloudmesh.storage.provider.awsboto.Provider.Provider()
+        elif service == "awslibcloud":
+            provider = cloudmesh.storage.provider.awslibcloud.Provider.Provider()
         return provider
-
 
     def createDir(self, service, dirName):
         print("createDir", service, dirName)
@@ -58,5 +64,3 @@ class Manager(object):
         print("listFileInfo", service, fileName, dirName)
         provider = self._provider(service)
         provider.listFileInfo(fileName, dirName)
-
-

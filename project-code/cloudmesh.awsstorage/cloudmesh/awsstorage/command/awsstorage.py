@@ -1,18 +1,18 @@
 from __future__ import print_function
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
-from cloudmesh.awsawsstorage.api.manager import Manager
+from cloudmesh.awsstorage.api.manager import Manager
 from cloudmesh.common.console import  Console
 from cloudmesh.common.util import path_expand
 from pprint import pprint
 
 
-class AwsawsstorageCommand(PluginCommand):
+class AwsstorageCommand(PluginCommand):
 
     # noinspection PyUnusedLocal
     @command
-    def do_awsawsstorage(self, args, arguments):
-      """
+    def do_awsstorage(self, args, arguments):
+        """
         ::
         Usage:
             awsstorage [--awsstorage=<SERVICE>] create dir DIRNAME
@@ -24,7 +24,7 @@ class AwsawsstorageCommand(PluginCommand):
             awsstorage [--awsstorage=<SERVICE>] search file FILENAME [DIRNAME]
             awsstorage [--awsstorage=<SERVICE>] list file info FILENAME DIRNAME
 
-        Manage file awsstorage on AWS S3 buckets and perform operations like put, get, delete on the files.
+        Manage file storage on AWS S3 buckets and perform operations like put, get, delete on the files.
 
         Arguments:
             DIRNAME Name of the directory where file is to be created or searched or deleted.
@@ -74,14 +74,12 @@ class AwsawsstorageCommand(PluginCommand):
             is the same as
             awsstorage  --awsstorage=aws put FILENAME DESTDIR
         """
-
         pprint(arguments)
 
         m = Manager()
 
         service = None
 
-        #filename = arguments.FILENAME[0]
         try:
             service = arguments["--awsstorage"]
         except Exception as e:
@@ -119,4 +117,3 @@ class AwsawsstorageCommand(PluginCommand):
             m.listFileInfo(service, arguments.FILENAME, arguments.DIRNAME)
         else:
             print("Command not recognized.")
-

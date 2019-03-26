@@ -1,6 +1,5 @@
-from cloudmesh.storage.awslibcloud.Provider import \
-    Provider as AwsLibcloudStorageProvider
-from cloudmesh.storage.awsboto.Provider import Provider as AwsBotoStargeProvider
+from cloudmesh.storage.awslibcloud.Provider import Provider as AwsLibcloudStorageProvider
+from cloudmesh.storage.awsboto.Provider import Provider as AwsBotoStorageProvider
 from cloudmesh.management.configuration.config import Config
 from cloudmesh.common.console import Console
 from cloudmesh.mongo.DataBaseDecorator import DatabaseUpdate
@@ -11,17 +10,16 @@ class Provider(object):
 
     def __init__(self, name=None,
                  configuration="~/.cloudmesh/.cloudmesh4.yaml"):
-        self.kind = Config(configuration)["cloudmesh"]["storage"][name]["cm"][
-            "kind"]
+        self.kind = Config(configuration)["cloudmesh"]["storage"][name]["cm"]["kind"]
         self.name = name
 
         # Console.msg("FOUND Kind", self.kind)
 
         if self.kind in ["awsboto"]:
-            self.p = wsLibcloudStorageProvider(name=name,
+            self.p = AwsBotoStorageProvider(name=name,
                                                configuration=configuration)
         elif self.kind in ["awslibcloud"]:
-            self.p = AwsBotoStargeProvider(name=name,
+            self.p = AwsLibcloudStorageProvider(name=name,
                                            configuration=configuration)
 
     def cloudname(self):

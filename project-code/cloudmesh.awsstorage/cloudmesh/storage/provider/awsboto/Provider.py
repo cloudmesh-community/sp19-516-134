@@ -4,6 +4,7 @@ import os
 from cloudmesh.common.util import path_expand
 from cloudmesh.common.util import HEADING
 from pprint import pprint
+from cloudmesh.mongo.DataBaseDecorator import DatabaseUpdate
 
 class Provider(object):
 
@@ -184,6 +185,8 @@ class Provider(object):
                     metadata = self.s3Client.head_object(Bucket=self.container_name, Key=obj.key)
                     # print(metadata)
                     info = {
+                        "cloud": 'aws',
+                        "kind": 'storage',
                         "fileName": obj.key,
                         # "creationDate" : metadata['ResponseMetadata']['HTTPHeaders']['date'],
                         "lastModificationDate": metadata['ResponseMetadata']['HTTPHeaders']['last-modified'],
