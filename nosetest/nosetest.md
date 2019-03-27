@@ -1,5 +1,7 @@
 # Nosetest
 
+:o: do a pull request to `chapter/in/nosetest.md` in book, change url in README.yml
+
 Nosetest is a utility to unit test python code. 
 
 ## Installation
@@ -10,11 +12,21 @@ The nose module can be installed with the help of pip utility
 ```
 
 This will install the nose module in the current Python distribution as well 
-as a nosetest.exe, which means the test can be run using this utility as well as using –m switch.
+as a nosetest.exe, which means the test can be run using this utility as well as using `–m` switch.
 
 ## Directory structure in cloudmesh
 
 Test cases can be placed in the cm/tests directory.
+
+:o: replace image with directory tree, you can use the tree command, or just do by hand 
+
+```
++ cloudmesh
+  + tests
+    - test.....py
+```
+
+:o: put a filename that you use, remove image
 
 ![nosetest Directory Structure](images/nosetest-screenshot1.png){#fig:nosetest-screenshot1}
 
@@ -25,6 +37,7 @@ Once you are in the cm directory, testcases can be executed using.
 ```python
    $ nosetests -v --nocapture tests/test_data_s3.py
 ```
+
 nose collects tests from unittest.TestCase subclasses, of course. We can also write simple test functions, as well as test classes that are not subclasses of unittest.TestCase. nose also supplies a number of helpful functions for writing timed tests, testing for exceptions, and other common use cases.
 
 Example
@@ -66,6 +79,7 @@ The result will be true if the test run is successful, or false if it fails or r
 nose supports fixtures (setup and teardown methods) at the package, module, class, and test level. As with py.test or unittest fixtures, setup always runs before any test (or collection of tests for test packages and modules); teardown runs if setup has completed successfully, regardless of the status of the test run.
 
 ## Cloudmesh sample test example
+
 ```python
 #################################################################
 # nosetest -v --nopature
