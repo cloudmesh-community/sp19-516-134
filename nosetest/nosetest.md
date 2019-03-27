@@ -1,6 +1,6 @@
 # Nosetest
 
-:o: do a pull request to `chapter/in/nosetest.md` in book, change url in README.yml
+:o: do a pull request to `cloudmesh-community/cm/documentation/source/nosetest.md` in book, change url in README.yml, remove your original in your hid and than work with pull requests for improvements from that mpoment on 
 
 Nosetest is a utility to unit test python code. 
 
