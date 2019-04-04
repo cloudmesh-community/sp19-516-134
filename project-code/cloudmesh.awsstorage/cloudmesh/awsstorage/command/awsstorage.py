@@ -14,74 +14,60 @@ class AwsstorageCommand(PluginCommand):
     def do_awsstorage(self, args, arguments):
         """
         ::
-        Usage:
-            awsstorage [--awsstorage=<SERVICE>] create dir DIRNAME
-            awsstorage [--awsstorage=<SERVICE>] delete dir DIRNAME
-            awsstorage [--awsstorage=<SERVICE>] list dir files [DIRNAME]
-            awsstorage [--awsstorage=<SERVICE>] put file SOURCEFILENAME SOURCEDIR DESTFILENAME DESTDIR
-            awsstorage [--awsstorage=<SERVICE>] gett file SOURCEFILENAME SOURCEDIR DESTFILENAME DESTDIR
-            awsstorage [--awsstorage=<SERVICE>] delete file FILENAME DIRNAME
-            awsstorage [--awsstorage=<SERVICE>] search file FILENAME [DIRNAME]
-            awsstorage [--awsstorage=<SERVICE>] list file info FILENAME DIRNAME
+          Usage:
+                awsstorage [--awsstorage=SERVICE] create dir DIRECTORY
+                awsstorage [--awsstorage=SERVICE] gett SOURCE DESTINATION [--recursive]
+                awsstorage [--awsstorage=SERVICE] put SOURCE DESTINATION [--recursive]
+                awsstorage [--awsstorage=SERVICE] list SOURCE [--recursive]
+                awsstorage [--awsstorage=SERVICE] delete SOURCE
+                awsstorage [--awsstorage=SERVICE] search DIRECTORY FILENAME [--recursive]
 
-        Manage file storage on AWS S3 buckets and perform operations like put, get, delete on the files.
+          This command does some useful things.
 
-        Arguments:
-            DIRNAME Name of the directory where file is to be created or searched or deleted.
-            FILENAME Name of the file is to be created or searched or deleted.
-            SOURCEFILENAME Name of the source file for put or get actions
-            SOURCEDIR Name of the source file directory for put or get actions
-            DESTFILENAME Name of the destination file for put or get actions
-            DESTDIR Name of the destination file directory for put or get actions
+          Arguments:
+              SOURCE        SOURCE can be a directory or file
+              DESTINATION   DESTINATION can be a directory or file
+              DIRECTORY     DIRECTORY refers to a folder on the cloud service
 
-        Options:
-          -h --help
-          --awsstorage=<SERVICE>  Cloud awsstorage service name like aws or azure or box or google
+          Options:
+              --awsstorage=SERVICE  specify the cloud service name like aws or azure or box or google
 
-        Description:
-            Commands to manage file awsstorage on cloud
+          Description:
+                commands used to upload, download, list files on different cloud storage services.
 
-            awsstorage create dir
-                Creates directory with the given name.
+                awsstorage put [options..]
+                    Uploads the file specified in the filename to specified cloud from the SOURCEDIR.
 
-            awsstorage delete dir
-                Deletes directory with the given name.
+                awsstorage gett [options..]
+                    Downloads the file specified in the filename from the specified cloud to the DESTDIR.
 
-            awsstorage list dir files
-                Lists all files present in the input directory.
-                If no dir is specified, it will list all files across directories.
+                awsstorage delete [options..]
+                    Deletes the file specified in the filename from the specified cloud.
 
-            awsstorage put file
-                Uploads file to cloud awsstorage from the local store.
+                awsstorage list [options..]
+                    lists all the files from the container name specified on the specified cloud.
 
-            awsstorage gett file
-                Downloads file from cloud awsstorage to the local store.
+                awsstorage create dir [options..]
+                    creates a folder with the directory name specified on the specified cloud.
 
-            awsstorage delete file
-                Deletes the input file from specified cloud awsstorage directory.
+                awsstorage search [options..]
+                    searches for the source in all the folders on the specified cloud.
 
-            awsstorage search file
-                Searches and lists the input file from specified cloud awsstorage directory.
-                If no dir is specified, it will list all files across directories which match the filename.
-
-            awsstorage list file info
-                Lists the file attributes for the input file.
-
-        Example:
+          Example:
             set awsstorage=aws
-            awsstorage put FILENAME DESTDIR
-
+            awsstorage put SOURCE DESTINATION --recursive
             is the same as
-            awsstorage  --awsstorage=aws put FILENAME DESTDIR
+            awsstorage --awsstorage=aws put SOURCE DESTINATION --recursive
         """
-        pprint(arguments)
 
+        pprint(arguments)
         m = Manager()
 
         service = None
 
         try:
-            service = arguments["--awsstorage"]
+            arguments.storage = arguments["--awsstorage"]
+            arguments.recursive = arguments["--recursive"]
         except Exception as e:
             try:
                 v = Variables()
@@ -89,31 +75,24 @@ class AwsstorageCommand(PluginCommand):
             except Exception as e:
                 service = None
 
-        if service is None:
-            Console.error("awsstorage service not defined")
+        if arguments.storage is None:
+            Console.error("storage service not defined")
 
-        if arguments.create == True and arguments.dir == True:
-            m.createDir(service, arguments.DIRNAME)
-        elif arguments.gett == True and arguments.file == True:
-            print('In service get file')
-            m.getFile(service, arguments.SOURCEFILENAME, arguments.SOURCEDIR, arguments.DESTFILENAME, arguments.DESTDIR)
-        elif arguments.delete == True and arguments.dir == True:
-            m.deleteDir(service, arguments.DIRNAME)
-        elif arguments.list == True and arguments.dir == True and arguments.files == True:
-            if arguments.DIRNAME is not None:
-                m.listDirFiles(service, arguments.DIRNAME)
-            else:
-                m.listDirFiles(service, '')
-        elif arguments.put == True and arguments.file == True:
-            m.putFile(service, arguments.SOURCEFILENAME, arguments.SOURCEDIR, arguments.DESTFILENAME, arguments.DESTDIR)
-        elif arguments.delete and arguments.file == True:
-            m.deleteFile(service, arguments.FILENAME, arguments.DIRNAME)
-        elif arguments.search == True and arguments.file == True:
-            if arguments.DIRNAME is not None:
-                m.searchFile(service, arguments.FILENAME, arguments.DIRNAME)
-            else:
-                m.searchFile(service, arguments.FILENAME, '')
-        elif arguments.list == True and arguments.file == True and arguments.info == True:
-            m.listFileInfo(service, arguments.FILENAME, arguments.DIRNAME)
+        if arguments.gett:
+            m.get(arguments.storage, arguments.SOURCE, arguments.DESTINATION,
+                  arguments.recursive)
+        elif arguments.put:
+            m.put(arguments.storage, arguments.SOURCE, arguments.DESTINATION,
+                  arguments.recursive)
+        elif arguments.list:
+            print('in list')
+            m.list(arguments.storage, arguments.SOURCE, arguments.recursive)
+        elif arguments.create and arguments.dir:
+            m.createdir(arguments.storage, arguments.DIRECTORY)
+        elif arguments.delete:
+            m.delete(arguments.storage, arguments.SOURCE)
+        elif arguments.search:
+            m.search(arguments.storage, arguments.DIRECTORY, arguments.FILENAME,
+                     arguments.recursive)
         else:
             print("Command not recognized.")
