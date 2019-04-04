@@ -25,42 +25,39 @@ class Manager(object):
             provider = cloudmesh.storage.provider.awslibcloud.Provider.Provider()
         return provider
 
-    def createDir(self, service, dirName):
-        print("createDir", service, dirName)
+    def get(self, service, source, destination, recursive):
+        Console.ok(f"get {service} {source} {destination} {recursive}")
         provider = self._provider(service)
-        provider.createDir(dirName)
+        d = provider.get(service, source, destination, recursive)
+        return d
 
-    def listDirFiles(self, service, dirName):
-        print("listDirFiles", service, dirName)
+    def put(self, service, source, destination, recursive):
+        Console.ok(f"put {service} {source}")
         provider = self._provider(service)
-        provider.listDirFiles(dirName)
+        d = provider.put(service, source, destination, recursive)
+        return d
 
-    def deleteDir(self, service, dirName):
-        print("deleteDir", service, dirName)
+    def createdir(self, service, directory):
+        Console.ok(f"create_dir {directory}")
         provider = self._provider(service)
-        provider.deleteDir(dirName)
+        print(directory)
+        d = provider.create_dir(service, directory)
+        return d
 
-    def putFile(self, service, sourceFilename, sourceDir, destFilename, destDir):
-        print("putFile", service, sourceFilename, sourceDir, destFilename, destDir)
+    def delete(self, service, source):
+        Console.ok(f"delete filename {service} {source}")
         provider = self._provider(service)
-        provider.putFile(sourceFilename, sourceDir, destFilename, destDir)
+        provider.delete(service, source)
 
-    def getFile(self, service, sourceFilename, sourceDir, destFilename, destDir):
-        print("getFile", service, sourceFilename, sourceDir, destFilename, destDir)
+    def search(self, service, directory, filename, recursive):
+        Console.ok(f"search {directory}")
         provider = self._provider(service)
-        provider.getFile(sourceFilename, sourceDir, destFilename, destDir)
+        d = provider.search(service,directory, filename, recursive)
+        return d
 
-    def deleteFile(self, service, fileName, dirName):
-        print("deleteFile", service, fileName, dirName)
+    def list(self, service, source, recursive):
+        #Console.ok(f"list {source}")
         provider = self._provider(service)
-        provider.deleteFile(fileName, dirName)
+        d = provider.list(service, source, recursive)
+        return d
 
-    def searchFile(self, service, fileName, dirName):
-        print("searchFile", service, fileName, dirName)
-        provider = self._provider(service)
-        provider.searchFile(fileName, dirName)
-
-    def listFileInfo(self, service, fileName, dirName):
-        print("listFileInfo", service, fileName, dirName)
-        provider = self._provider(service)
-        provider.listFileInfo(fileName, dirName)
