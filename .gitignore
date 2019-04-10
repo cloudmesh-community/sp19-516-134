@@ -1,8 +1,54 @@
+.DS_*
+_*
+.#*
+*.html
+*.class
+*.iso
+*.rpm
+*.class
+*.exe
+*.o
+.idea
+
+*-dot2tex-*
+# LATEX FILES
+single_tb.tex
+dest
+*.tdo
+*.fls
+*.markdown.*
+# LaTeX
+*.dvi
+*.out
+*.synctex.*
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.idx
+*.ilg
+*.ind
+*.ptc
+*.run.xml
+*.toc
+*.log
+*.fdb_latexmk
+*.fls
+*.tdo
+*.listing
+*.lof
+*.cb
+*.cb2
+*.lb
+*--
+
 .idea
 # Byte-compiled / optimized / DLL files
+/_book/
 __pycache__/
 *.py[cod]
 *$py.class
+dist
 
 # C extensions
 *.so
@@ -52,14 +98,6 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
 
 # Sphinx documentation
 docs/_build/
@@ -67,24 +105,15 @@ docs/_build/
 # PyBuilder
 target/
 
-# IPython Notebook
+#Ipython Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
+# Editor
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# celery beat schedule file
-celerybeat-schedule
+paper/report.pdf
 
-# dotenv
-.env
 
-# virtualenv
-venv/
-ENV/
-
-# Spyder project settings
-.spyderproject
-
-# Rope project settings
-.ropeproject
