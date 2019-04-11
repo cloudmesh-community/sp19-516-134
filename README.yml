@@ -24,6 +24,7 @@ project :
     - title : AWS S3 file management using libcloud
       docopt : https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/Docopt_storage_libcloud.py
       code : https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/
+             https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3
     
     
     
