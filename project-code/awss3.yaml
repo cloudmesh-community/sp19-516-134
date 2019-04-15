@@ -1,0 +1,211 @@
+swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title: "awss3file"
+  description: "A service for aws s3 file storage using swagger-2.0 specification and codegen"
+  termsOfService: "http://swagger.io/terms/"
+  contact: 
+    name: "AWS S3 file storage REST Service"
+  license: 
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/cloudmesh"
+schemes: 
+  - "http"
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+paths: 
+  /put_file:
+    post:
+      tags:
+        - S3S
+      operationId: awss3_openapi.put_file
+      description: "Upload files to the specified directory"
+      parameters:
+        - in: body
+          name: params 
+          description: "Provide the directory name in body of the request"
+          schema: 
+            $ref: "#/definitions/PUT"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Upload files"
+  /get_file:
+    get:
+      tags:
+        - S3S
+      operationId: awss3_openapi.get_file
+      description: "Download files from specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: source 
+          description: "Provide the source path in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: destination 
+          description: "Provide the destination path in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "get files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /list_file:
+    get:
+      tags:
+        - S3S
+      operationId: awss3_openapi.list_file
+      description: "Returns list of files in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "list files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /search_file:
+    get:
+      tags:
+        - S3S
+      operationId: awss3_openapi.search_file
+      description: "Searches the files in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: filename 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "search files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /delete_file:
+    get:
+      tags:
+        - S3S
+      operationId: awss3_openapi.delete_file
+      description: "Deletes the files in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: source 
+          description: "Provide the source name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "delete files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /create_dir:
+    get:
+      tags:
+        - S3S
+      operationId: awss3_openapi.create_dir
+      description: "creates the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "create directory"
+          schema: 
+            $ref: "#/definitions/LIST"
+
+definitions:
+  PUT:
+    type: "object"
+    required: 
+      - "service"
+      - "source"
+      - "destination"
+      - "recursive"
+    properties: 
+      service:
+        type: "string"
+      source:
+        type: "string"
+      destination:
+        type: "string"
+      recursive:
+        type: "string"
+  LIST:
+    type: "object"
+    required: 
+      - "d"
+    properties: 
+      d:
+        type: "string"
