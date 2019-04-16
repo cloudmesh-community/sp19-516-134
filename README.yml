@@ -16,16 +16,11 @@ chapter:
   - title: Scikit-Learn
     keyword: Introduction,Supervised learning,Unsupervised Learning,Linear Models,Support Vector Machines,Stochastic Gradient Descent,Nearest Neighbors,Feature Selection
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/prg/python/scikit-learn/scikit-learn.md
-    github: 
-    issue: https://github.com/cloudmesh-community/book/issues/242
-comprehension :    
+comprehension :
     VM connection using config file : https://github.com/cloudmesh-community/sp19-516-134/tree/master/Comprehension    
 project : 
     - title : AWS S3 file management using boto
-      docopt : https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/Docopt_storage_libcloud.py
-      code : https://github.com/cloudmesh/cloudmesh-storage
-             https://github.com/cloudmesh-community/sp19-516-134/blob/master/project-code/
-             https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3
-    
+      code : https://github.com/cloudmesh/cloudmesh-storagecloudmesh/storage/provider/awss3
+
     
     
