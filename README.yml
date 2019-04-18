@@ -19,8 +19,7 @@ chapter:
 comprehension :
     VM connection using config file : https://github.com/cloudmesh-community/sp19-516-134/tree/master/Comprehension    
 project : 
-    - title : AWS S3 file management using boto
-      code : https://github.com/cloudmesh/cloudmesh-storagecloudmesh/storage/provider/awss3
+    - title : AWS S3 file management using boto    
       code: https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3
       url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/README.md
       pytest:
