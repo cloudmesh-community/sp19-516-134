@@ -21,8 +21,10 @@ comprehension :
 project : 
     - title : AWS S3 file management using boto
       code : https://github.com/cloudmesh/cloudmesh-storagecloudmesh/storage/provider/awss3
+      code: https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/provider/awss3
+      url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/README.md
       pytest:
-        - TBD
+        - https://github.com/cloudmesh/cloudmesh-storage/tree/master/tests/test_storage_awss3.py
 
     
     
