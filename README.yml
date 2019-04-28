@@ -24,6 +24,7 @@ project :
       url: https://github.com/cloudmesh/cloudmesh-manual/blob/master/docs-source/source/README-storage.md
       openapi: https://github.com/cloudmesh/cloudmesh-storage/tree/master/cloudmesh/storage/spec
       documentation provider specific: https://github.com/cloudmesh/cloudmesh-storage/blob/master/deprecated/docs-source/source/README-storage-awss3.md
+      benchmark: https://github.com/cloudmesh/cloudmesh-manual/tree/master/docs-source/source/benchmarks/awss3-storage-benchmark.md
       pytest:
         - https://github.com/cloudmesh/cloudmesh-storage/tree/master/tests/test_storage_awss3.py
         - https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/tests/test_openapi_storage.py
