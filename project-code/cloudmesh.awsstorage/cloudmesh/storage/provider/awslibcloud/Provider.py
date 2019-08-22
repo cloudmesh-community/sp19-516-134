@@ -10,7 +10,7 @@ cls = get_driver(Provider.S3)
 
 class Provider(object):
 
-    def __init__(self, name=None, configuration="~/.cloudmesh/cloudmesh4.yaml"):
+    def __init__(self, name=None, configuration="~/.cloudmesh/cloudmesh.yaml"):
         config = Config()
         credentials = config['cloudmesh.storage.aws.credentials']
         pprint(credentials)
